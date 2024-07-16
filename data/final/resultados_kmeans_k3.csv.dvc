@@ -1,0 +1,5 @@
+outs:
+- md5: b56fc728ab62ce31cc1b172d90b3f723
+  size: 2143789
+  hash: md5
+  path: resultados_kmeans_k3.csv
