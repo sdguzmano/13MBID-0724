@@ -9,7 +9,7 @@ df = pd.read_csv("../../../data/final/datos_finales.csv", sep=";")
 # Título del dashboard
 st.write("# 13MBID - Visualización de datos")
 st.write("## Panel de visualización generado sobre los datos de créditos y tarjetas emitidas a clientes de la entidad")
-st.write("#### Persona/s: ................")
+st.write("#### Persona/s: Samuel Guzman")
 st.write("----")
 
 # Gráficos
@@ -43,13 +43,13 @@ st.write(f"Tipo de crédito seleccionado: {option}")
 if st.checkbox('Mostrar créditos finalizados?', value=True):
 
     # Conteo de ocurrencias por estado
-    estado_credito_counts = df_filtrado['estado_credito'].value_counts()
+    estado_credito_counts = df_filtrado['estado_credito_N'].value_counts()
 
     # Gráfico de torta de estos valores
     fig = go.Figure(data=[go.Pie(labels=estado_credito_counts.index, values=estado_credito_counts)])
     fig.update_layout(title_text='Distribución de créditos por estado registrado')
 else:
-    df_filtrado = df_filtrado[df_filtrado['estado_credito'] == 0]
+    df_filtrado = df_filtrado[df_filtrado['estado_credito_N'] == 'P']
     # Conteo de ocurrencias por caso
     falta_pago_counts = df_filtrado['falta_pago'].value_counts()
 
